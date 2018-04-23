@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*------common start------*/
+
+.link-color {
+  color: #3d8fe1;
+}
+
+.link-color:hover,
+.link-color:focus {
+  color: #3d8fe1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mouse-pointer {
+  cursor: pointer;
+}
+
+/*------common end------*/

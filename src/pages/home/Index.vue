@@ -17,7 +17,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
-.index {
-  color: red;
-}
+  @import '../../styles/style.scss';
+
+  .index {
+    color: red;
+  }
 </style>
