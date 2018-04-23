@@ -39,7 +39,7 @@ export default {
   [types.USER_TEST] (state, {
     test
   }) {
-    state.test = test;
+    state.test = test
   },
   [types.GET_USER] (state, {
     getUser

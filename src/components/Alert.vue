@@ -27,26 +27,25 @@
 </template>
 
 <script>
-  export default {
-    name: 'Alert',
-    data () {
-      return {
-        msg: 'Alert'
-      }
-    },
-    methods: {
-      cancelAlert (res) {
-        let alert = document.querySelector('#alert');
-        alert.style.display = 'none';
-      }
+export default {
+  name: 'Alert',
+  data () {
+    return {
+      msg: 'Alert'
+    }
+  },
+  methods: {
+    cancelAlert (res) {
+      let alert = document.querySelector('#alert')
+      alert.style.display = 'none'
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
-  @import '../scss/color';
-  @import "../scss/font";
+  @import '../styles/style.scss';
 
   .modal-tip {
     z-index: 99999;
@@ -56,7 +55,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $blackLight;
+    background-color: $black;
 
     &__cell {
       display: table-cell;

@@ -17,21 +17,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'Loading',
-    props: [],
-    computed: {},
-    methods: {},
-    mounted () {
-    },
-    watch: {},
-    components: {}
-  }
+export default {
+  name: 'Loading',
+  props: [],
+  computed: {},
+  methods: {},
+  mounted () {
+  },
+  watch: {},
+  components: {}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
-  @import '../scss/color.scss';
+  @import '../styles/style.scss';
 
   .loading {
     z-index: 9999;
@@ -40,7 +40,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: $blackLight;
+    background-color: $black;
 
     &__cell {
       display: table-cell;

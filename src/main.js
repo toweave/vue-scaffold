@@ -6,11 +6,14 @@ import './plugin/javascript'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store';
+import store from './store'
 import plugin from './plugin/plugin'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './styles/other.css'
+
+import Alert from './components/Alert.vue'
+Vue.component(Alert.name, Alert)
 
 Vue.use(plugin)
 Vue.use(ElementUI)

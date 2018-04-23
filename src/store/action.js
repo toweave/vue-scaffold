@@ -5,7 +5,7 @@ export default {
     commit,
     state
   }) {
-    let res = services;
+    let res = services
     commit(types.GET_USER, {
       getUser: res
     })

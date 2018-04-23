@@ -33,46 +33,45 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
-  export default {
-    name: 'ModalTip',
-    data () {
-      return {
-        msg: 'ModalTip'
+import {mapGetters} from 'vuex'
+export default {
+  name: 'ModalTip',
+  data () {
+    return {
+      msg: 'ModalTip'
+    }
+  },
+  computed: {
+    ...mapGetters({
+      alert: 'alert'
+    })
+  },
+  methods: {
+    activeButtonLeft (res) {
+      this.alert.show = false
+      if (typeof res === 'function') {
+        res('确定');
       }
     },
-    computed: {
-      ...mapGetters({
-        alert: 'alert'
-      })
-    },
-    methods: {
-      activeButtonLeft (res) {
-        this.alert.show = false;
-        if (typeof res === 'function') {
-          res('确定');
-        }
-      },
-      activeButtonRight (res) {
-        this.alert.show = false;
-        if (typeof res === 'function') {
-          res('取消');
-        }
+    activeButtonRight (res) {
+      this.alert.show = false
+      if (typeof res === 'function') {
+        res('取消')
       }
-    },
-    created () {
-    },
-    mounted () {
-    },
-    watch: {},
-    components: {}
-  }
+    }
+  },
+  created () {
+  },
+  mounted () {
+  },
+  watch: {},
+  components: {}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
-  @import '../scss/color';
-  @import "../scss/font";
+  @import '../styles/style.scss';
 
   .modal-tip {
     z-index: 99999;
@@ -82,7 +81,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $blackLight;
+    background-color: $black;
 
     &__cell {
       display: table-cell;
