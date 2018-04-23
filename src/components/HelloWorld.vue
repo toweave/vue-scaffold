@@ -45,6 +45,7 @@
         </a>
       </li>
     </ul>
+    <h2>{{$formattingNumber(123456789.123)}}</h2>
     <h2>Ecosystem</h2>
     <ul>
       <li>
