@@ -13,12 +13,11 @@
 
 <script>
 export default {
-  name: 'Side',
+  name: 'HeaderSide',
   components: {},
   computed: {},
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       bodyHeight: ''
     }
   },

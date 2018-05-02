@@ -25,4 +25,17 @@
   cursor: pointer;
 }
 
+.el-button--primary {
+  color: $white;
+  background-color: $main;
+  border-color: $main;
+}
+
+.el-button--primary:focus,
+.el-button--primary:hover {
+  color: $white;
+  background-color: $mainLight;
+  border-color: $mainLight;
+}
+
 /*------common end------*/

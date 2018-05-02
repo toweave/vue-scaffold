@@ -1,5 +1,5 @@
 <template>
-  <div id="Loading" class="loading">
+  <div id="loading" class="loading" v-show="loading">
     <div class="loading__cell">
       <div class="loaders">
         <div class="loader">
@@ -17,10 +17,15 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'Loading',
   props: [],
-  computed: {},
+  computed: {
+    ...mapGetters({
+      loading: 'loading'
+    })
+  },
   methods: {},
   mounted () {
   },
@@ -40,7 +45,7 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: $black;
+    background-color: $blackShade;
 
     &__cell {
       display: table-cell;
@@ -89,9 +94,9 @@ export default {
     width: 0;
     height: 0;
     border-right: 25px solid transparent;
-    border-top: 25px solid $font;
-    border-left: 25px solid $font;
-    border-bottom: 25px solid $font;
+    border-top: 25px solid $main;
+    border-left: 25px solid $main;
+    border-bottom: 25px solid $main;
     border-radius: 25px;
     -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
     animation: rotate_pacman_half_up 0.5s 0s infinite;
@@ -103,9 +108,9 @@ export default {
     height: 0;
     margin-top: -50px;
     border-right: 25px solid transparent;
-    border-top: 25px solid $font;
-    border-left: 25px solid $font;
-    border-bottom: 25px solid $font;
+    border-top: 25px solid $main;
+    border-left: 25px solid $main;
+    border-bottom: 25px solid $main;
     border-radius: 25px;
     -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
     animation: rotate_pacman_half_down 0.5s 0s infinite;
@@ -120,7 +125,7 @@ export default {
     height: 10px;
     margin: 2px;
     border-radius: 100%;
-    background-color: $font;
+    background-color: $main;
     -webkit-transform: translate(0, -6.25px);
     -ms-transform: translate(0, -6.25px);
     transform: translate(0, -6.25px);

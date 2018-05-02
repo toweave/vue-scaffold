@@ -1,23 +1,29 @@
 <template>
-  <div class="modal-tip animated">
+  <div class="modal-tip animated" v-show="alert.show">
     <div class="modal-tip__cell">
       <div class="modal-box animated flipInX">
-        <div class="modal-box__cancel" @click="cancelAlert()">
+        <div class="modal-box__cancel" @click="activeButtonRight(alert.functionRight)">
           <i class="modal-box__i el-icon-close"></i>
         </div>
         <div class="modal-box__header">
-          <div class="modal-box__title">提示</div>
+          <div class="modal-box__title">{{alert.title}}</div>
         </div>
         <div class="modal-box__body">
           <div class="modal-box__text">
-            <div id="warnText">警告!!!</div>
+            {{alert.content}}
           </div>
         </div>
         <div class="modal-box__footer">
           <div class="modal-box__buttons">
             <div class="modal-box__button modal-box__button-single"
-                 @click="cancelAlert()">
-              <span class="modal-box__span">确定</span>
+                 v-show="alert.buttonLeft"
+                 @click="activeButtonLeft(alert.functionLeft)">
+              <span class="modal-box__span">{{alert.buttonLeft}}</span>
+            </div>
+            <div class="modal-box__button modal-box__button-single"
+                 v-show="alert.buttonRight"
+                 @click="activeButtonRight(alert.functionRight)">
+              <span class="modal-box__span">{{alert.buttonRight}}</span>
             </div>
           </div>
         </div>
@@ -27,19 +33,39 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'Alert',
+  components: {},
   data () {
     return {
       msg: 'Alert'
     }
   },
+  computed: {
+    ...mapGetters({
+      alert: 'alert'
+    })
+  },
   methods: {
-    cancelAlert (res) {
-      let alert = document.querySelector('#alert')
-      alert.style.display = 'none'
+    activeButtonLeft (res) {
+      this.alert.show = false
+      if (typeof res === 'function') {
+        res('确定')
+      }
+    },
+    activeButtonRight (res) {
+      this.alert.show = false
+      if (typeof res === 'function') {
+        res('取消')
+      }
     }
-  }
+  },
+  created () {
+  },
+  mounted () {
+  },
+  watch: {}
 }
 </script>
 
@@ -55,7 +81,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $black;
+    background-color: $blackShade;
 
     &__cell {
       display: table-cell;
@@ -120,6 +146,7 @@ export default {
     &__text {
       float: left;
       width: 100%;
+      word-break: break-all;
       margin: 12px 0 20px 0;
     }
 

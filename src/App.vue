@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!--<transition name="transition"-->
+                <!--enter-active-class="animated fadeIn"-->
+                <!--leave-active-class="animated fadeOut">-->
+      <router-view></router-view>
+    <!--</transition>-->
+    <alert></alert>
+    <loading></loading>
   </div>
 </template>
 
 <script>
+import Alert from './components/Alert.vue'
+import Loading from './components/Loading.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Alert, Loading},
+  data () {
+    return {
+      msg: 'App'
+    }
+  },
+  computed: {
+  },
+  methods: {
+  },
+  created () {
+  },
+  mounted () {
+  },
+  watch: {}
 }
 </script>
 
