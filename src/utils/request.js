@@ -20,10 +20,16 @@ function checkStatus (response) {
  * @param  {object} [options] The options we want to pass to "axios"
  * @return {object}           An object containing either "data" or "err"
  */
-export default async function request (url, options) {
+export async function request (url, options) {
   store.commit({type: 'ACTIVE_LOADING', loading: true})
   const response = await axios(url, options)
   store.commit({type: 'ACTIVE_LOADING', loading: false})
+  const data = checkStatus(response)
+  return data.data
+}
+
+export async function requestNoLoading (url, options) {
+  const response = await axios(url, options)
   const data = checkStatus(response)
   return data.data
 }

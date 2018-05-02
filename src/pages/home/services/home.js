@@ -1,9 +1,13 @@
 import { PAGE_SIZE } from '../constants'
-import request from '../../../utils/request'
+import {request, requestNoLoading} from '../../../utils/request'
 
 // http://data.yiguo.com/message/list?username=lizi&status=
 export function fetch ({page = ''}) {
   return request(`http://data.yiguo.com/message/list?username=${name}&status=${PAGE_SIZE}`)
+}
+
+export function fetchNoLoading ({page = ''}) {
+  return requestNoLoading(`http://data.yiguo.com/message/list?username=${name}&status=${PAGE_SIZE}`)
 }
 
 export function remove (id) {

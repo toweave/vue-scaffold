@@ -3,7 +3,8 @@
     <h1>{{ msg }}</h1>
     <h1>{{$formattingNumber(123456789.111, 3)}}</h1>
     <a class="link-color">link-color</a>
-    <el-button type="primary" :loading="false" @click="getData()">加载中</el-button>
+    <el-button type="primary"  @click="getDataLoading()">点击Loading</el-button>
+    <el-button type="primary" :loading="booleanLoading" @click="getDataNoLoading()">点击No Loading</el-button>
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
   </div>
@@ -16,7 +17,8 @@ export default {
   name: 'HomeIndex',
   data () {
     return {
-      msg: 'Welcome to HomeIndex'
+      msg: 'Welcome to HomeIndex',
+      booleanLoading: false
     }
   },
   methods: {
@@ -38,10 +40,21 @@ export default {
         }
       })
     },
-    getData () {
+    getDataLoading () {
       let params = ''
       let test = apiService.fetch(params)
       test.then((res) => {
+        // this.booleanLoading = false
+        console.log(24, res)
+      })
+    },
+    getDataNoLoading () {
+      let params = ''
+      this.booleanLoading = true
+      let test = apiService.fetchNoLoading(params)
+      test.then((res) => {
+        this.booleanLoading = false
+        // this.booleanLoading = false
         console.log(24, res)
       })
     }
