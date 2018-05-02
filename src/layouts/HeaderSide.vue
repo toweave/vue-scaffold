@@ -1,18 +1,19 @@
 <template>
-  <el-container class="main" height="60px">
-    <el-header class="container-header">Header</el-header>
-    <el-main class="container-body" :style="{'height': bodyHeight}">
-      <router-view/>
-    </el-main>
-    <el-footer class="container-footer" height="40px">
-      Copyright© Toweave’s vue-scaffold  version 0.0.1
-    </el-footer>
+  <el-container>
+    <el-header class="container-header" height="60px">Header</el-header>
+    <el-container>
+      <el-aside class="container-side" width="200px">Aside</el-aside>
+      <el-container>
+        <el-main class="container-body" :style="{'height': bodyHeight}">Main</el-main>
+        <el-footer class="container-footer"  height="40px">Footer</el-footer>
+      </el-container>
+    </el-container>
   </el-container>
 </template>
 
 <script>
 export default {
-  name: 'Main',
+  name: 'Side',
   components: {},
   computed: {},
   data () {
@@ -39,7 +40,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
   @import '../styles/index.scss';
-  .main {
+  .container {
   }
 
   .container-header {
@@ -48,9 +49,12 @@ export default {
     background-color: $font;
   }
 
+  .container-side {
+    background-color: #f1f1f1;
+  }
+
   .container-footer {
-    font-size: $sizeXS;
     line-height: 40px;
-    background-color: $grayLight;
+    background-color: #f1f1f1;
   }
 </style>
