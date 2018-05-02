@@ -1,6 +1,6 @@
 {
-  "name": "scaffold",
-  "version": "1.0.0",
+  "name": "vue-scaffold",
+  "version": "0.0.1",
   "description": "This project is Toweave's power by Vue.",
   "author": "toweave <toweave@163.com>",
   "private": true,

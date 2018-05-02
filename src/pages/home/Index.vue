@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <h1>{{ msg }}</h1>
+    <h1>{{$formattingNumber(123456789)}}</h1>
     <el-button type="primary" :loading="false" @click="getData()">加载中</el-button>
   </div>
 </template>
