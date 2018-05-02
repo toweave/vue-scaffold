@@ -31,7 +31,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/scss" rel="stylesheet/scss" lang="scss" scoped>
-  @import '../styles/style.scss';
+  @import '../styles/index.scss';
 
   .loading {
     z-index: 9999;

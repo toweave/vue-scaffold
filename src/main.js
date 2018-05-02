@@ -10,7 +10,7 @@ import store from './store'
 import install from './install/prototype'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import './styles/other.css'
+import './styles/other.scss'
 
 import Alert from './components/Alert.vue'
 Vue.component(Alert.name, Alert)
