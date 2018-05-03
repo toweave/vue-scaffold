@@ -7,7 +7,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import install from './install/prototype'
+import './directives'
+import plugin from './plugins'
 import ElementUI from 'element-ui'
 import './styles/element-variables.scss'
 import './styles/other.scss'
@@ -15,7 +16,7 @@ import './styles/other.scss'
 import Alert from './components/Alert.vue'
 Vue.component(Alert.name, Alert)
 
-Vue.use(install)
+Vue.use(plugin)
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

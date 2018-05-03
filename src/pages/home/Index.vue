@@ -7,21 +7,27 @@
     <el-button type="primary" :loading="booleanLoading" @click="getDataNoLoading()">点击No Loading</el-button>
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
+    <input id="test" v-focus="testData">
   </div>
 </template>
 
 <script>
 import * as apiService from './services/home'
-
+import mixin from '../../mixins'
 export default {
   name: 'HomeIndex',
+  mixins: [mixin],
   data () {
     return {
       msg: 'Welcome to HomeIndex',
-      booleanLoading: false
+      booleanLoading: false,
+      testData: '123456789'
     }
   },
   methods: {
+    testFocus () {
+      console.log('1234789')
+    },
     testAlert () {
       this.$store.commit({
         type: 'ACTIVE_ALERT',
@@ -64,6 +70,10 @@ export default {
         console.log(24, res)
       })
     }
+  },
+  created () {
+    console.log(69, this)
+    // this.testMethods()
   }
 }
 </script>

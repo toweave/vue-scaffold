@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!--<transition name="transition"-->
+    <!--<transition name="animated-transition"-->
                 <!--enter-active-class="animated fadeIn"-->
                 <!--leave-active-class="animated fadeOut">-->
       <router-view></router-view>
