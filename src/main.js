@@ -9,7 +9,7 @@ import router from './router'
 import store from './store'
 import install from './install/prototype'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import './styles/element-variables.scss'
 import './styles/other.scss'
 
 import Alert from './components/Alert.vue'
