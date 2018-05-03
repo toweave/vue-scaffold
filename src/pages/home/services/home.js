@@ -1,13 +1,12 @@
-import { PAGE_SIZE } from '../constants'
 import {request, requestNoLoading} from '../../../utils/request'
 
 // http://data.yiguo.com/message/list?username=lizi&status=
-export function fetch ({page = ''}) {
-  return request(`http://data.yiguo.com/message/list?username=${name}&status=${PAGE_SIZE}`)
+export function fetch ({page = 1, limit = 3}) {
+  return request(`/users?_limit=${limit}&_page=${page}`)
 }
 
-export function fetchNoLoading ({page = ''}) {
-  return requestNoLoading(`http://data.yiguo.com/message/list?username=${name}&status=${PAGE_SIZE}`)
+export function fetchNoLoading ({page = 1, limit = 3}) {
+  return requestNoLoading(`/users?_limit=${limit}&_page=${page}`)
 }
 
 export function remove (id) {

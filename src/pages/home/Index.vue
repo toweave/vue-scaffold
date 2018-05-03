@@ -41,7 +41,10 @@ export default {
       })
     },
     getDataLoading () {
-      let params = ''
+      let params = {
+        page: 1,
+        limit: 4
+      }
       let test = apiService.fetch(params)
       test.then((res) => {
         // this.booleanLoading = false
@@ -49,7 +52,10 @@ export default {
       })
     },
     getDataNoLoading () {
-      let params = ''
+      let params = {
+        page: 2,
+        limit: 5
+      }
       this.booleanLoading = true
       let test = apiService.fetchNoLoading(params)
       test.then((res) => {
