@@ -2,7 +2,9 @@ import axios from 'axios'
 import store from '../store'
 // axios.defaults.crossDomain = true
 // axios.defaults.withCredentials = true
-
+// store.dispatch('getUserName', {
+//   userName: 'Toweave-123'
+// })
 function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
     return response

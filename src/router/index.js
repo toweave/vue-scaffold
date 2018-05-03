@@ -52,7 +52,7 @@ const router = new Router({
 
 // 全局前置导航守卫
 router.beforeEach((to, from, next) => {
-  console.log(to, from)
+  // console.log(to, from)
   NProgress.start() // finish progress bar
   next()
 })
