@@ -1,9 +1,19 @@
-import { PAGE_SIZE } from '../constants'
-import request from '../../../utils/request'
+import {request, requestNoLoading} from '../../../utils/request'
+const option = {
+  method: 'GET',
+  // params: {
+  //   ID: 12345
+  // },
+  responseType: 'json', // 默认的
+  timeout: 6000
+}
 
-// http://data.yiguo.com/message/list?username=lizi&status=
-export function fetch ({page = ''}) {
-  return request(`http://data.yiguo.com/message/list?username=${name}&status=${PAGE_SIZE}`)
+export function fetch ({page = 1, limit = 3}) {
+  return request(`/users?_limit=${limit}&_page=${page}`, option)
+}
+
+export function fetchNoLoading ({page = 1, limit = 3}) {
+  return requestNoLoading(`/users?_limit=${limit}&_page=${page}`)
 }
 
 export function remove (id) {

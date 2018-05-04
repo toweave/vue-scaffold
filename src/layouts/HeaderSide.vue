@@ -1,13 +1,19 @@
 <template>
-  <el-container class="container">
-    <el-aside class="container-side" width="200px">Aside</el-aside>
-    <el-main :style="{'height': bodyHeight}">Main</el-main>
+  <el-container>
+    <el-header class="container-header" height="60px">Header</el-header>
+    <el-container>
+      <el-aside class="container-side" width="200px">Aside</el-aside>
+      <el-container>
+        <el-main class="container-body" :style="{'height': bodyHeight}">Main</el-main>
+        <el-footer class="container-footer"  height="40px">Footer</el-footer>
+      </el-container>
+    </el-container>
   </el-container>
 </template>
 
 <script>
 export default {
-  name: 'Side',
+  name: 'HeaderSide',
   components: {},
   computed: {},
   data () {
@@ -36,7 +42,18 @@ export default {
   .container {
   }
 
+  .container-header {
+    line-height: 60px;
+    color: $white;
+    background-color: $font;
+  }
+
   .container-side {
+    background-color: #f1f1f1;
+  }
+
+  .container-footer {
+    line-height: 40px;
     background-color: #f1f1f1;
   }
 </style>

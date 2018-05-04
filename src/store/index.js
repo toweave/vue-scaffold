@@ -11,10 +11,6 @@ Vue.use(Vuex)
 
 const state = {
   userName: '--',
-  userPassword: '',
-  activeIndex: null,
-  userInfo: {},
-  permissionCollection: {},
   loading: false,
   alert: {
     show: false,
@@ -25,9 +21,7 @@ const state = {
     functionLeft: null,
     functionRight: null
   },
-  config: null,
-  test: '',
-  getUser: null
+  config: null
 }
 
 export default new Vuex.Store({
