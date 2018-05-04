@@ -8,9 +8,11 @@
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
     <input id="test" v-focus="testData">
+    <div>{{watchData()}}</div>
     <div>{{testTime | date('yyyy-MM-dd HH:mm:ss.Z')}}</div>
-    <div>{{'123456789.1234567' | number(2)}}</div>
-    <div>{{'sdfdsf' | capitalize}}</div>
+    <!--<div>{{'123456789.1234567' | number(2)}}</div>-->
+    <div>{{'toweave is a web maker.' | capitalize}}</div>
+    <!--<div>{{testFocus()}}</div>-->
   </div>
 </template>
 
@@ -29,6 +31,9 @@ export default {
     }
   },
   methods: {
+    watchData () {
+      console.log(34)
+    },
     testFocus () {
       console.log('1234789')
     },
@@ -81,7 +86,7 @@ export default {
     // let number = 0
     setInterval(() => {
       this.testTime = new Date()
-    }, 17)
+    }, 1000)
   }
 }
 </script>
