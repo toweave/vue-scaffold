@@ -8,7 +8,7 @@
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
     <input id="test" v-focus="testData">
-    <div>{{testTime | capitalize}}</div>
+    <div>{{testTime | date('yyyy-MM-dd HH:mm:ss.Z')}}</div>
     <div>{{'123456789.1234567' | number(2)}}</div>
     <div>{{'sdfdsf' | capitalize}}</div>
   </div>
