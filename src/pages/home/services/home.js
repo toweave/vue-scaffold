@@ -1,8 +1,12 @@
 import {request, requestNoLoading} from '../../../utils/request'
-
+const option = {
+  method: 'GET',
+  responseType: 'json', // 默认的
+  timeout: 6000
+}
 // http://data.yiguo.com/message/list?username=lizi&status=
 export function fetch ({page = 1, limit = 3}) {
-  return request(`/users?_limit=${limit}&_page=${page}`)
+  return request(`/users?_limit=${limit}&_page=${page}`, option)
 }
 
 export function fetchNoLoading ({page = 1, limit = 3}) {
