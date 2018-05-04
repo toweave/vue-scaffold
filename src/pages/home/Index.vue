@@ -7,9 +7,8 @@
     <el-button type="primary" :loading="booleanLoading" @click="getDataNoLoading()">点击No Loading</el-button>
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
-    <!--<input id="test" v-focus="testData">-->
-    <!--<div>{{testTime | capitalize}}</div>-->
-    <div>{{testTime | date}}</div>
+    <input id="test" v-focus="testData">
+    <div>{{testTime | capitalize}}</div>
     <!--<div>{{'123456789.1234567' | number(6)}}</div>-->
     <div>{{'sdfdsf' | capitalize}}</div>
   </div>

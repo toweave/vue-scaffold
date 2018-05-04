@@ -7,14 +7,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './directives'
+import * as directives from './directives'
 import * as filters from './filters'
 import plugin from './plugins'
 import ElementUI from 'element-ui'
 import './styles/element-variables.scss'
 import './styles/other.scss'
+
 import Alert from './components/Alert.vue'
 Vue.component(Alert.name, Alert)
+
+Object.keys(directives).forEach(key => {
+  Vue.directive(key, directives[key])
+})
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })

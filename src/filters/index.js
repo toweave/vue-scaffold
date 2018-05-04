@@ -3,7 +3,6 @@ const capitalize = (value) => {
   if (!value) {
     return ''
   } else {
-    console.log(typeof value, value)
     value = value.toString()
     return value.charAt(0).toUpperCase() + value.slice(1)
   }
@@ -24,7 +23,6 @@ const number = (value, decimals, point, separator) => {
      */
     value = (value + '').replace(/[^0-9+-Ee.]/g, '')
     let number = !isFinite(+value) ? 0 : +value
-    console.log(typeof value, value, number)
     let decimal = !isFinite(+decimals) ? 0 : Math.abs(decimals)
     let sep = (typeof separator === 'undefined') ? ',' : separator
     let dec = (typeof point === 'undefined') ? '.' : point
