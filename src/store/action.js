@@ -1,21 +1,20 @@
-import * as services from '../services/index'
 import * as types from './mutation-types'
 export default {
-  async getUserInfo ({
+  async getUserName ({
     commit,
     state
-  }) {
-    let res = services
-    commit(types.GET_USER, {
-      getUser: res
+  }, data) {
+    console.log(7, state, data)
+    commit(types.USER_NAME, {
+      userName: data.userName
     })
   }
   // async getUserTest ({
   //   commit,
   //   state
   // }) {
-  //   // commit(types.USER_INFO, {
-  //   //   user: 'TEST'
+  //   // commit(types.SET_CONFIG, {
+  //   //   config: 'config'
   //   // })
   // }
 }

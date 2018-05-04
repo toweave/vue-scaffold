@@ -1,13 +1,12 @@
-@charset "UTF-8";
+@import './index.scss';
 /*------common start------*/
-
 .link-color {
-  color: #3d8fe1;
+  color: $main;
 }
 
 .link-color:hover,
 .link-color:focus {
-  color: #3d8fe1;
+  color: $mainDeep;
 }
 
 .text-center {
@@ -25,5 +24,4 @@
 .mouse-pointer {
   cursor: pointer;
 }
-
 /*------common end------*/

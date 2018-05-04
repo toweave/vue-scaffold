@@ -1,6 +1,6 @@
 {
-  "name": "scaffold",
-  "version": "1.0.0",
+  "name": "vue-scaffold",
+  "version": "0.1.0",
   "description": "This project is Toweave's power by Vue.",
   "author": "toweave <toweave@163.com>",
   "private": true,
@@ -14,10 +14,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "axios": "^0.18.0",
     "element-ui": "^2.3.6",
     "es6-promise": "^4.2.4",
     "normalize.css": "^8.0.0",
+    "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

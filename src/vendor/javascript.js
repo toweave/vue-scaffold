@@ -16,10 +16,9 @@
       let currTime = new Date().getTime()
       let timeToCall = Math.max(0, 16.7 - (currTime - lastTime))
       lastTime = currTime + timeToCall
-      let id = window.setTimeout(function () {
+      return window.setTimeout(function () {
         callback(lastTime)
       }, timeToCall)
-      return id
     }
   }
   if (!window.cancelAnimationFrame) {

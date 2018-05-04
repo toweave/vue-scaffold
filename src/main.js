@@ -2,19 +2,27 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'normalize.css'
 import 'es6-promise/auto'
-import './plugin/javascript'
+import './vendor/javascript'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import plugin from './plugin/plugin'
+import * as directives from './directives'
+import * as filters from './filters'
+import plugin from './plugins'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import './styles/other.css'
+import './styles/element-variables.scss'
+import './styles/other.scss'
 
 import Alert from './components/Alert.vue'
 Vue.component(Alert.name, Alert)
 
+Object.keys(directives).forEach(key => {
+  Vue.directive(key, directives[key])
+})
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 Vue.use(plugin)
 Vue.use(ElementUI)
 
