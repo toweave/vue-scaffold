@@ -1,10 +1,13 @@
 import {request, requestNoLoading} from '../../../utils/request'
 const option = {
   method: 'GET',
+  // params: {
+  //   ID: 12345
+  // },
   responseType: 'json', // 默认的
   timeout: 6000
 }
-// http://data.yiguo.com/message/list?username=lizi&status=
+
 export function fetch ({page = 1, limit = 3}) {
   return request(`/users?_limit=${limit}&_page=${page}`, option)
 }

@@ -8,14 +8,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './directives'
+import * as filters from './filters'
 import plugin from './plugins'
 import ElementUI from 'element-ui'
 import './styles/element-variables.scss'
 import './styles/other.scss'
-
 import Alert from './components/Alert.vue'
 Vue.component(Alert.name, Alert)
-
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 Vue.use(plugin)
 Vue.use(ElementUI)
 

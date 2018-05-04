@@ -3,11 +3,15 @@
     <h1>{{ msg }}</h1>
     <h1>{{$formattingNumber(123456789.111, 3)}}</h1>
     <a class="link-color">link-color</a>
-    <el-button type="primary"  @click="getDataLoading()">点击Loading</el-button>
+    <el-button type="primary" @click="getDataLoading()">点击Loading</el-button>
     <el-button type="primary" :loading="booleanLoading" @click="getDataNoLoading()">点击No Loading</el-button>
 
     <el-button type="primary" :loading="false" @click="testAlert()">test</el-button>
-    <input id="test" v-focus="testData">
+    <!--<input id="test" v-focus="testData">-->
+    <!--<div>{{testTime | capitalize}}</div>-->
+    <div>{{testTime | date}}</div>
+    <!--<div>{{'123456789.1234567' | number(6)}}</div>-->
+    <div>{{'sdfdsf' | capitalize}}</div>
   </div>
 </template>
 
@@ -21,7 +25,8 @@ export default {
     return {
       msg: 'Welcome to HomeIndex',
       booleanLoading: false,
-      testData: '123456789'
+      testData: '123456789',
+      testTime: 0
     }
   },
   methods: {
@@ -74,6 +79,10 @@ export default {
   created () {
     console.log(69, this)
     // this.testMethods()
+    // let number = 0
+    setInterval(() => {
+      this.testTime = new Date()
+    }, 17)
   }
 }
 </script>
