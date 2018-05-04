@@ -8,7 +8,7 @@ const capitalize = (value) => {
   }
 }
 
-const number = (value, decimals, point, separator) => {
+const number = (value, decimals, separators, points) => {
   if (!value) {
     return ''
   } else {
@@ -24,24 +24,24 @@ const number = (value, decimals, point, separator) => {
     value = (value + '').replace(/[^0-9+-Ee.]/g, '')
     let number = !isFinite(+value) ? 0 : +value
     let decimal = !isFinite(+decimals) ? 0 : Math.abs(decimals)
-    let sep = (typeof separator === 'undefined') ? ',' : separator
-    let dec = (typeof point === 'undefined') ? '.' : point
+    let separator = (typeof separators === 'undefined') ? ',' : separators
+    let point = (typeof points === 'undefined') ? '.' : points
     let string = ''
     let reg = /(-?\d+)(\d{3})/
-    let toFixedFix = function (number, sep) {
-      let fix = Math.pow(10, sep)
-      return '' + Math.ceil(number * fix) / fix
+    let toFixedFix = function (number, decimal) {
+      let fix = Math.pow(10, decimal)
+      return '' + Math.round(number * fix) / fix
     }
     string = (decimal ? toFixedFix(number, decimal) : '' + Math.round(number)).split('.')
     while (reg.test(string[0])) {
-      string[0] = string[0].replace(reg, '$1' + sep + '$2')
+      string[0] = string[0].replace(reg, '$1' + separator + '$2')
     }
 
     if ((string[1] || '').length < decimal) {
       string[1] = string[1] || ''
       string[1] += new Array(decimal - string[1].length + 1).join('0')
     }
-    return string.join(dec)
+    return string.join(point)
   }
 }
 
